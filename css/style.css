@@ -86,6 +86,9 @@ body {
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
+.logo-link {
+  text-decoration: none;
+}
 
 .nav-desktop {
   display: flex;
@@ -1036,7 +1039,6 @@ body {
   margin-bottom: 2rem;
 }
 
-
 /* Social Links */
 .social-links {
   display: flex;
@@ -1068,18 +1070,18 @@ body {
 /* Form Validation Styles */
 .form-input.valid,
 .form-textarea.valid {
-  border-color: #10B981;
+  border-color: #10b981;
   box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
 }
 
 .form-input.error,
 .form-textarea.error {
-  border-color: #EF4444;
+  border-color: #ef4444;
   box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
 }
 
 .form-error-message {
-  color: #EF4444;
+  color: #ef4444;
   font-size: 0.875rem;
   margin-top: 0.25rem;
   display: none;
@@ -1111,8 +1113,12 @@ body {
 }
 
 @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 /* Accessibility improvements */
@@ -1156,7 +1162,6 @@ body {
   top: 6px;
 }
 
-
 /* Service Pages Styles */
 .service-hero {
   background: linear-gradient(135deg, #fff5f0 0%, #fff0e6 100%);
@@ -1185,9 +1190,15 @@ body {
 }
 
 @keyframes pulse {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.05); }
-  100% { transform: scale(1); }
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 
 .service-hero-title {
@@ -1390,32 +1401,32 @@ body {
   .service-hero {
     padding: 120px 0 60px;
   }
-  
+
   .service-hero-title {
     font-size: 2.5rem;
   }
-  
+
   .service-hero-description {
     font-size: 1.1rem;
   }
-  
+
   .service-hero-buttons {
     flex-direction: column;
     align-items: center;
   }
-  
+
   .service-features-grid {
     grid-template-columns: 1fr;
   }
-  
+
   .technologies-grid {
     grid-template-columns: repeat(2, 1fr);
   }
-  
+
   .process-steps {
     grid-template-columns: 1fr;
   }
-  
+
   .cta-title {
     font-size: 2rem;
   }
@@ -1425,26 +1436,25 @@ body {
   .service-hero-title {
     font-size: 2rem;
   }
-  
+
   .service-icon-large {
     width: 80px;
     height: 80px;
     font-size: 2rem;
   }
-  
+
   .technologies-grid {
     grid-template-columns: 1fr;
   }
-  
+
   .tech-item {
     padding: 1.5rem 1rem;
   }
-  
+
   .tech-item i {
     font-size: 2.5rem;
   }
 }
-
 
 /* Service Link Styles */
 .service-link {
@@ -1470,4 +1480,3 @@ body {
 .service-link:hover::after {
   transform: translateX(5px);
 }
-
