@@ -5,7 +5,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ByteUp Solutions - Sua Ideia Nossa Solução</title>
-    <meta name="description" content="ByteUp Solutions - Transformamos suas ideias em soluções digitais inovadoras">
+    <meta name="description" content="ByteUp Solutions - Transformamos suas ideias em soluções digitais inovadoras. Desenvolvimento web, apps mobile, UI/UX design, marketing digital e cloud solutions em Itu, SP.">
+    <meta name="keywords" content="desenvolvimento web, apps mobile, UI/UX design, marketing digital, cloud solutions, ByteUp Solutions, Itu SP, soluções digitais">
+    <meta name="author" content="ByteUp Solutions">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="ByteUp Solutions - Sua Ideia Nossa Solução">
+    <meta property="og:description" content="Transformamos suas ideias em soluções digitais inovadoras. Desenvolvimento web, apps mobile, UI/UX design e muito mais.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://byteupsolutions.github.io/ByteUp_website">
+    <meta property="og:image" content="assets/byteup-logo.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="ByteUp Solutions - Sua Ideia Nossa Solução">
+    <meta name="twitter:description" content="Transformamos suas ideias em soluções digitais inovadoras.">
+    <meta name="twitter:image" content="assets/byteup-logo.png">
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <link rel="apple-touch-icon" href="assets/byteup-logo.png">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/responsive.css">
     <link
@@ -15,6 +29,9 @@
 </head>
 
 <body>
+    <!-- Skip to content link for accessibility -->
+    <a href="#main-content" class="skip-link">Pular para o conteúdo principal</a>
+    
     <!-- Header -->
     <header class="header" id="header">
         <div class="container">
@@ -55,6 +72,7 @@
     </header>
 
     <!-- Hero Section -->
+    <main id="main-content">
     <section id="home" class="hero">
         <div class="container">
             <div class="hero-content">
@@ -142,6 +160,7 @@
                     <p class="service-description">
                         Criamos sites e aplicações web modernas, responsivas e otimizadas para performance.
                     </p>
+                    <a href="desenvolvimento-web.html" class="service-link">Saiba mais</a>
                 </div>
 
                 <div class="service-card">
@@ -152,6 +171,7 @@
                     <p class="service-description">
                         Desenvolvemos aplicativos móveis nativos e híbridos para iOS e Android.
                     </p>
+                    <a href="apps-mobile.html" class="service-link">Saiba mais</a>
                 </div>
 
                 <div class="service-card">
@@ -162,6 +182,7 @@
                     <p class="service-description">
                         Criamos interfaces intuitivas e experiências de usuário memoráveis.
                     </p>
+                    <a href="ui-ux-design.html" class="service-link">Saiba mais</a>
                 </div>
 
                 <div class="service-card">
@@ -172,6 +193,7 @@
                     <p class="service-description">
                         Estratégias digitais para aumentar sua visibilidade e alcançar mais clientes.
                     </p>
+                    <a href="marketing-digital.html" class="service-link">Saiba mais</a>
                 </div>
 
                 <div class="service-card">
@@ -182,6 +204,7 @@
                     <p class="service-description">
                         Soluções em nuvem escaláveis e seguras para otimizar seus processos.
                     </p>
+                    <a href="cloud-solutions.html" class="service-link">Saiba mais</a>
                 </div>
 
                 <div class="service-card">
@@ -192,6 +215,7 @@
                     <p class="service-description">
                         Suporte contínuo e manutenção para garantir o perfeito funcionamento.
                     </p>
+                    <a href="suporte-tecnico.html" class="service-link">Saiba mais</a>
                 </div>
             </div>
         </div>
@@ -211,16 +235,16 @@
                 <div class="contact-form-wrapper">
                     <form class="contact-form" id="contactForm">
                         <div class="form-group">
-                            <input type="text" class="form-input" placeholder="Seu nome" required>
+                            <input type="text" name="name" class="form-input" placeholder="Seu nome" required>
                         </div>
                         <div class="form-group">
-                            <input type="email" class="form-input" placeholder="Seu email" required>
+                            <input type="email" name="email" class="form-input" placeholder="Seu email" required>
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-input" placeholder="Assunto" required>
+                            <input type="text" name="subject" class="form-input" placeholder="Assunto" required>
                         </div>
                         <div class="form-group">
-                            <textarea class="form-textarea" placeholder="Sua mensagem" rows="5" required></textarea>
+                            <textarea name="message" class="form-textarea" placeholder="Sua mensagem" rows="5" required></textarea>
                         </div>
                         <button type="submit" class="btn btn-primary btn-full">Enviar Mensagem</button>
                     </form>
@@ -268,6 +292,7 @@
             </div>
         </div>
     </section>
+    </main>
 
     <!-- Footer -->
     <footer class="footer">
@@ -310,9 +335,23 @@
                 <div class="footer-section">
                     <h4 class="footer-title">Contato</h4>
                     <div class="footer-contact">
-                        <p>contato@byteupsolutions.com</p> <!-- alteração necessária, pois não temos esse email -->
-                        <p>(11) 99999-9999</p> <!-- alteração necessária, pois não decidimos quem será o contato principal -->
+                        <p>contato@byteupsolutions.com</p>
+                        <p>(11) 99999-9999</p>
                         <p>Itu, SP - Brasil</p>
+                    </div>
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="WhatsApp">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
                     </div>
                 </div>
             </div>
