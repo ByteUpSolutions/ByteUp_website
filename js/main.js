@@ -86,37 +86,119 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
-// Contact Form Handling
+// Contact Form Handling with Enhanced Validation
 if (contactForm) {
+    const formInputs = contactForm.querySelectorAll('.form-input, .form-textarea');
+    const submitBtn = contactForm.querySelector('button[type="submit"]');
+    
+    // Add real-time validation
+    formInputs.forEach(input => {
+        input.addEventListener('blur', function() {
+            validateField(this);
+        });
+        
+        input.addEventListener('input', function() {
+            if (this.classList.contains('error')) {
+                validateField(this);
+            }
+        });
+    });
+    
+    function validateField(field) {
+        const value = field.value.trim();
+        const fieldName = field.getAttribute('name');
+        let isValid = true;
+        let errorMessage = '';
+        
+        // Remove previous error messages
+        const existingError = field.parentNode.querySelector('.form-error-message');
+        if (existingError) {
+            existingError.remove();
+        }
+        
+        // Required field validation
+        if (!value) {
+            isValid = false;
+            errorMessage = 'Este campo é obrigatório.';
+        } else {
+            // Specific validations
+            switch (fieldName) {
+                case 'name':
+                    if (value.length < 2) {
+                        isValid = false;
+                        errorMessage = 'Nome deve ter pelo menos 2 caracteres.';
+                    }
+                    break;
+                case 'email':
+                    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    if (!emailRegex.test(value)) {
+                        isValid = false;
+                        errorMessage = 'Por favor, insira um email válido.';
+                    }
+                    break;
+                case 'subject':
+                    if (value.length < 3) {
+                        isValid = false;
+                        errorMessage = 'Assunto deve ter pelo menos 3 caracteres.';
+                    }
+                    break;
+                case 'message':
+                    if (value.length < 10) {
+                        isValid = false;
+                        errorMessage = 'Mensagem deve ter pelo menos 10 caracteres.';
+                    }
+                    break;
+            }
+        }
+        
+        // Update field appearance
+        field.classList.remove('error', 'valid');
+        field.classList.add(isValid ? 'valid' : 'error');
+        
+        // Show error message if invalid
+        if (!isValid) {
+            const errorDiv = document.createElement('div');
+            errorDiv.className = 'form-error-message show';
+            errorDiv.textContent = errorMessage;
+            field.parentNode.appendChild(errorDiv);
+        }
+        
+        return isValid;
+    }
+    
     contactForm.addEventListener("submit", function(e) {
         e.preventDefault();
         
-        // Get form data
-        const formData = new FormData(this);
-        const formObject = {};
-        formData.forEach((value, key) => {
-            formObject[key] = value;
-        });
-        
-        // Simple validation
-        const requiredFields = this.querySelectorAll("[required]");
-        let isValid = true;
-        
-        requiredFields.forEach(field => {
-            if (!field.value.trim()) {
-                isValid = false;
-                field.classList.add("error");
-            } else {
-                field.classList.remove("error");
+        // Validate all fields
+        let isFormValid = true;
+        formInputs.forEach(input => {
+            if (!validateField(input)) {
+                isFormValid = false;
             }
         });
         
-        if (isValid) {
-            // Show success message
-            showNotification("Mensagem enviada com sucesso! Entraremos em contato em breve.", "success");
-            this.reset();
+        if (isFormValid) {
+            // Show loading state
+            submitBtn.classList.add('loading');
+            submitBtn.disabled = true;
+            
+            // Simulate form submission (replace with actual submission logic)
+            setTimeout(() => {
+                // Remove loading state
+                submitBtn.classList.remove('loading');
+                submitBtn.disabled = false;
+                
+                // Show success message
+                showNotification("Mensagem enviada com sucesso! Entraremos em contato em breve.", "success");
+                
+                // Reset form
+                this.reset();
+                formInputs.forEach(input => {
+                    input.classList.remove('error', 'valid');
+                });
+            }, 2000);
         } else {
-            showNotification("Por favor, preencha todos os campos obrigatórios.", "error");
+            showNotification("Por favor, corrija os erros no formulário.", "error");
         }
     });
 }
