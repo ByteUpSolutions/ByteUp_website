@@ -225,9 +225,9 @@ O site implementa boas práticas de SEO:
 - [x] Implementar formulário de contato com validação
 - [x] Implementar responsividade completa
 - [ ] Definir conteúdo para a seção de blog
-- [ ] Atualizar informações de contato
+- [x] Atualizar informações de contato
 - [ ] Revisar serviços oferecidos
-- [ ] Definir responsável pelo contato
+- [x] Definir responsável pelo contato
 - [ ] Testar compatibilidade com diferentes navegadores
 - [ ] Revisar e otimizar o código CSS
 - [ ] Revisar e otimizar o código JavaScript
@@ -250,8 +250,8 @@ Este projeto está sob a licença MIT. Veja o arquivo `LICENSE` para mais detalh
 
 **ByteUp Solutions**
 - Website: [https://byteupsolutions.github.io/ByteUp_website](https://byteupsolutions.github.io/ByteUp_website)
-- Email: contato@byteupsolutions.com
-- Telefone: (11) 99999-9999
+- Email: byteupsolutions@gmail.com
+- Telefone: (11) 96639-4993
 - Localização: Itu, SP - Brasil
 
 ---
