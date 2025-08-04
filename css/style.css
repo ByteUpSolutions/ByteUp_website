@@ -340,6 +340,7 @@ body {
   box-shadow: 0 4px 15px rgba(120, 41, 0, 0.3);
 }
 
+/* var(--primary-color), #5a1f00) */
 .btn-primary:hover {
   background: linear-gradient(135deg, #5a1f00, var(--primary-color));
   transform: translateY(-2px) scale(1.02);
