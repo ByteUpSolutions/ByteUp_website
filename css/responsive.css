@@ -33,6 +33,10 @@
     grid-template-columns: 2fr 1fr 1fr;
     gap: 1.5rem;
   }
+
+  .google-forms-container {
+    padding-bottom: 85%; /* Ajuste para tablets */
+  }
 }
 
 /* Tablet */
@@ -131,8 +135,43 @@
 
   /* Contact Mobile */
   .contact-content {
-    grid-template-columns: 1fr;
+    flex-direction: column;
     gap: 2rem;
+    align-items: center;
+  }
+
+  .contact-form-wrapper {
+    order: 1;
+    margin-bottom: 2rem;
+    width: 100%;
+  }
+
+  .contact-info {
+    order: 2;
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .contact-item {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .contact-item .contact-details {
+    text-align: center;
+  }
+
+  .business-hours {
+    text-align: center;
+  }
+
+  .contact-info-title {
+    text-align: center;
+  }
+
+  .google-forms-container {
+    padding-bottom: 120%; /* Ajuste para mobile - formulário mais alto */
   }
 
   /* Footer Mobile */
@@ -265,6 +304,9 @@
 
   .contact-item {
     margin-bottom: 1.5rem;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
   }
 
   .contact-icon {
@@ -281,6 +323,30 @@
 
   .business-hours {
     padding: 1.25rem;
+    text-align: center;
+  }
+
+  .google-forms-container {
+    padding-bottom: 140%; /* Ajuste para telas muito pequenas */
+  }
+
+  .contact-form-wrapper {
+    margin: 0 -1rem; /* Expande até as bordas em telas pequenas */
+    border-radius: 0;
+  }
+
+  .google-forms-iframe {
+    border-radius: 0;
+  }
+
+  /* Ajustes adicionais para centralização em telas muito pequenas */
+  .contact-info {
+    padding: 0 1rem;
+    max-width: 100%;
+  }
+
+  .contact-icon {
+    margin-bottom: 0.5rem;
   }
 
   /* Footer */
