@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ByteUp Blog - Tecnologia e Inovação</title>
+    <link rel="stylesheet" href="blog.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Spline+Sans+Mono:wght@600&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="../assets/favicon.ico">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- fonte -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+      rel="stylesheet"
+    />
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+    <div class="header-content">
+        <div class="logo-container">
+            <img src="../assets/byteup-logo-black.png" alt="ByteUp Logo" class="logo"
+            style="filter: invert(1);">
+            <span class="logo-text">ByteUp Solutions Blog</span>
+        </div>
+        <nav class="nav-menu">
+            <a href="../index.html" class="nav-link">Home</a>
+        </nav>
+    <div id="progress-bar"></div>
+        <article id="post-content">
+                <div class="post-meta">
+                    <h1>Byte a byte, construindo soluções</h1>
+                    <span> 15 de Ago, 2025</span>
+                    <span id="reading-time"></span> 
+                </div>
+        </article>
+    </div>
+    </header>
+
+    <main>
+    <!-- Destaque Principal -->
+    <section class="featured-post">
+        <div class="featured-content">
+            <h1>Inteligência Artificial em 2025: O Futuro é Agora</h1>
+            <p>Descubra como a IA está transformando o desenvolvimento de software neste ano.</p>
+            <button class="read-more-btn">Leia Mais</button>
+        </div>
+        <div class="featured-image">
+            <img src="assets/Articial-inteligence.jpg" alt="IA em 2024">
+        </div>
+    </section>
+
+    <!-- Grid de Posts -->
+    <section class="posts-grid">
+        
+        <h2 class="section-title">Nossos Últimos Artigos</h2>
+        
+        <!-- Filter -->
+    <section class="blog-filters">
+    <div class="filter-buttons">
+        <button class="filter-btn active" data-category="all">Todos</button>
+        <button class="filter-btn" data-category="nuvem">Nuvem</button>
+        <button class="filter-btn" data-category="inovacao">Inovação</button>
+        <button class="filter-btn" data-category="seguranca">Segurança</button>
+    </div>
+    <input type="search" id="search-input" placeholder="Buscar por título...">
+</section>
+
+    <!-- container -->
+<div class="posts-container">
+    <div class="post-card" data-category="nuvem" data-title="Adotando a Nuvem: Como a Computação em Nuvem está Revolucionando Negócios">
+        <img src="assets/Cloud-Computing.jpg" alt="Computação em Nuvem">
+        <h3>Adotando a Nuvem: Como a Computação em Nuvem está Revolucionando Negócios</h3>
+        <p>Explore as vantagens da migração para a nuvem em 2025.</p>
+        <a href="#" class="read-more-link">Leia Mais</a>
+    </div>
+    
+    <div class="post-card" data-category="inovacao" data-title="O Metaverso: Explorando a Próxima Fronteira Digital">
+        <img src="assets/Metaverse.jpg" alt="Metaverso">
+        <h3>O Metaverso: Explorando a Próxima Fronteira Digital</h3>
+        <p>Entenda como o metaverso está moldando novas experiências online.</p>
+        <a href="#" class="read-more-link">Leia Mais</a>
+    </div>
+
+    <div class="post-card" data-category="seguranca" data-title="Tendências em Segurança Cibernética para 2025">
+        <img src="assets/Cybersecurity.jpg" alt="Segurança Cibernética">
+        <h3>Tendências em Segurança Cibernética para 2025</h3>
+        <p>Proteja seus negócios contra as ameaças mais recentes.</p>
+        <a href="#" class="read-more-link">Leia Mais</a>
+    </div>
+
+    </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter">
+        <h2>Assine Nossa Newsletter</h2>
+        <p>Receba as últimas notícias e insights sobre tecnologia diretamente em seu e-mail.</p>
+        <form class="newsletter-form">
+            <input type="email" placeholder="Seu melhor e-mail" required>
+            <button type="submit">Assinar</button>
+        </form>
+    </section>
+</main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-section">
+            <h4>ByteUp Solutions</h4>
+            <p>© 2025 ByteUp, Inc. Todos os direitos reservados.</p>
+        </div>
+        <div class="footer-section">
+            <h4>Links Rápidos</h4>
+            <a href="../index.html">Home</a>
+        </div>
+        <div class="footer-section">
+            <h4>Conecte-se</h4>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/company/byteup-solutions" target="_blank"><img src="assets/linkedin.png" alt="LinkedIn"></a>
+                <a href="https://www.instagram.com/byteup_solutions?igsh=MXd5cXAzOGxhejlxcg==" target="_blank"><img src="assets/instagram.png" alt="Instagram"></a>
+                <a href="https://api.whatsapp.com/send/?phone=5511966394993" target="_blank"><img src="assets/whatsapp.png" alt="Whatsapp"></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="blog.js"></script>
+</body>
+</html>

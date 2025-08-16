@@ -1,12 +1,22 @@
 /* Estilos Gerais */
 :root {
-    --primary-color: #246BFD;
+  --primary-color: #246BFD;
     --secondary-color: #FF7F41;
     --dark-color: #2D3748;
     --light-color: #F7F7F7;
     --text-color: #4A5568;
     --white: #FFFFFF;
     --brown: #782900;
+
+  --fonte-principal: 'Inter', sans-serif;
+  --fonte-codigo: 'JetBrains Mono', monospace;
+}
+
+/* mobile first */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
@@ -18,14 +28,48 @@ body {
     background-color: var(--light-color);
 }
 
+main {
+  width: 100%;
+  margin: 0 auto;
+}
+
+a {
+  color: var(--cor-destaque);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
 /* Header */
-.header {
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; 
+
+    background-color: var(--brown);
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.341);
+    font-family: "Oswald", "sans-serif";
+}
+.header-content {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 1rem 5%;
+    height: 10vh;
     background-color: var(--brown);
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+    font-family: "Oswald", "sans-serif";
 }
 
 .logo-container {
@@ -39,23 +83,23 @@ body {
 }
 
 .logo-text {
-    font-family: 'Anton', sans-serif;
     font-size: 24px;
+    font-weight: bolder;
     color: var(--white);
     margin-left: 10px;
-    
 }
 
 .nav-menu {
     display: flex;
     gap: 2rem;
-    
 }
 
 .nav-link {
     text-decoration: none;
     color: var(--white);
-    font-weight: 500;
+    font-family: "Oswald", "sans-serif";
+    font-weight: bolder;
+    font-size: 20px;
     transition: color 0.3s;
 }
 
@@ -63,11 +107,61 @@ body {
     color: var(--primary-color);
 }
 
+/* Barra de Progresso */
+#progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 4px;
+  background-color: var(--secondary-color);
+  width: 0%; 
+  z-index: 99;
+  transition: width 0.1s linear;
+}
+
+#post-content{
+  display: flex; 
+  flex-direction: column; 
+  justify-content: center;
+  align-items: center;
+}
+.post-meta {
+  color: var(--white);
+  font-size: 0.8rem;
+  gap: 5px;
+  text-align: center;
+}
+
+#reading-time::before {
+    content: '• ';
+}
+
+@media (min-width: 768px) {
+  .post-meta {
+    flex-direction: row;
+    gap: 16px;
+  }
+}
+@media (max-width: 768px) {
+    #post-content{
+        display: none;
+    }
+    .nav-link{
+        font-size: 18px;
+    }
+}
+/* main */
+main{
+    padding-top: 70px;
+}
 /* Post Destacado */
 .featured-post {
     display: flex;
-    min-height: 500px;
-    margin: 2rem 5%;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 85vh;
+    padding: 2rem 5%;
+    background-image: linear-gradient(to right, white, rgb(232, 232, 232), rgb(205, 205, 205));
 }
 
 .featured-content {
@@ -123,16 +217,99 @@ body {
     border-radius: 15px;
     box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.703);
 }
-
-/* main */
-.main{
-    background-image: linear-gradient(to bottom, white, gray, gray);
-    background-attachment: fixed;
+@media (max-width: 768px){
+    
+    .featured-content{
+        align-items: center;
+    }
+    .featured-content h1, p{
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+    .featured-content h1{
+        font-size: 25px;
+    }
+    .featured-content p{
+        font-size: 14px;
+    }
+}
+/* Grid de Posts : filter */
+.blog-filters {
+  display: flex;
+  flex-direction: column; 
+  gap: 16px; 
+  margin-bottom: 32px; 
 }
 
-/* Grid de Posts */
+.filter-buttons {
+  display: flex;
+  flex-wrap: wrap; 
+  gap: 10px;
+}
+
+.filter-btn {
+  padding: 8px 16px;
+  font-family: "Rubik", "Sans-serif"; 
+  font-size: 0.9rem;
+  border: 1px solid #e4e4e7; 
+  background-color: #ffffff;
+  color: #71717a; 
+  border-radius: 20px; 
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.filter-btn:hover {
+  background-color: #f4f4f5; 
+  color: #18181b; 
+}
+
+.filter-btn.active {
+  background-color: #6366f1; 
+  color: white;
+  border-color: #6366f1;
+}
+
+#search-input {
+  padding: 12px;
+  border: 1px solid #e4e4e7;
+  border-radius: 8px;
+  background-color: #ffffff;
+  font-family: var(--fonte-principal);
+  font-size: 1rem;
+  width: 100%; 
+}
+
+@media (min-width: 768px) {
+  .blog-filters {
+    flex-direction: row; 
+    justify-content: space-between; 
+    align-items: center;
+  }
+
+  #search-input {
+    width: 300px; 
+  }
+}
+/* cards */
 .posts-grid {
     padding: 4rem 5%;
+    background-image: linear-gradient(to right, white, rgb(255, 248, 238), rgb(251, 240, 226));
+    background-attachment: fixed;
+}
+@media (min-width:768px){
+    .posts-container{
+        display: flex;
+        justify-content: center;
+        align-items: stretch;
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+    .post-card{
+        max-width: 28vw;
+        flex-grow: 0;
+    }
 }
 
 .section-title {
@@ -141,12 +318,6 @@ body {
     text-align: center;
     margin-bottom: 3rem;
     color: var(--dark-color);
-}
-
-.posts-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 2rem;
 }
 
 .post-card {
@@ -288,29 +459,43 @@ body {
 
 /* Responsividade */
 @media (max-width: 768px) {
-    .header {
-        flex-direction: column;
-        padding: 1rem;
+    main{
+        padding-top: 10vh;
     }
-    
-    .nav-menu {
-        margin-top: 1rem;
-        flex-wrap: wrap;
-        justify-content: center;
+    .header-content {
+        height: 10vh;
+    }
+    .header-content .logo-text{
+        font-size: 18px;
+    }
+    .header-content .nav-menu{
+        gap: 10px;
+    }
+    .header-content .nav-link{
+        font-size: 16px;
+    }
+    .header-content .logo-container img{
+        height: 4.5vh;
+        width: 6vw;
     }
     
     .featured-post {
         flex-direction: column;
+        max-height: 40vh;
+        padding: 0px;
     }
     
     .featured-content {
         order: 2;
-        padding: 1rem;
     }
     
     .featured-image {
         order: 1;
-        height: 300px;
+        height: 30vw;
+    }
+    .featured-image img{
+        height: 40vh;
+        width: 70vw;;
     }
     
     .newsletter-form {
