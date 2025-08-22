@@ -1,0 +1,205 @@
+
+.article-page-main {
+    background-color: var(--cor-surface, #fff); 
+}
+
+.article-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 24px;
+    display: flex;
+    flex-direction: column; 
+    gap: 48px;
+}
+
+.article-body {
+    width: 100%;
+    max-width: 720px;
+    margin: 0 auto; 
+}
+
+.article-header .category-tag {
+    display: inline-block;
+    margin-right: 8px;
+    margin-bottom: 16px;
+    font-size: 0.8rem;
+    padding: 4px 12px;
+    border-radius: 16px;
+    background-color: var(--cor-fundo, #f4f4f5);
+    color: var(--cor-destaque, #6366f1);
+    font-weight: 500;
+}
+
+.article-title {
+    font-size: 2rem; 
+    line-height: 1.2;
+    margin-bottom: 16px;
+}
+
+.article-meta {
+    color: var(--cor-texto-suave, #71717a);
+    font-size: 0.9rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.featured-image {
+    margin: 32px 0;
+}
+.featured-image img {
+    width: 100%;
+    border-radius: 8px;
+}
+.featured-image figcaption {
+    font-size: 0.8rem;
+    color: var(--cor-texto-suave, #71717a);
+    text-align: center;
+    margin-top: 8px;
+    margin-left: 8px;
+}
+
+.article-content {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: var(--cor-texto, #18181b);
+}
+
+.article-content .lead {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--cor-texto-suave, #52525b);
+}
+
+.article-content h2 { font-size: 1.8rem; margin: 48px 0 16px; line-height: 1.3; }
+.article-content h3 { font-size: 1.4rem; margin: 32px 0 16px; line-height: 1.4; }
+.article-content a { color: var(--cor-destaque, #6366f1); text-decoration: underline; }
+.article-content blockquote {
+    margin: 32px 0;
+    padding-left: 24px;
+    border-left: 4px solid var(--cor-destaque, #6366f1);
+    font-size: 1.2rem;
+    font-style: italic;
+    color: var(--cor-texto-suave, #52525b);
+}
+
+.article-content pre[class*="language-"] {
+  padding: 1.5em;
+  margin: 1.5em 0;
+  overflow: auto;
+  border-radius: 8px;
+}
+
+.author-bio {
+    margin-top: 64px;
+    padding-top: 32px;
+    border-top: 1px solid var(--cor-borda, #e4e4e7);
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.author-avatar { width: 60px; height: 60px; border-radius: 50%; }
+.author-info h4 { margin: 0 0 4px; }
+.author-info p { margin: 0; font-size: 0.9rem; color: var(--cor-texto-suave, #71717a); }
+
+.article-sidebar {
+    width: 100%;
+}
+
+.sidebar-widget {
+    padding: 24px;
+    background-color: var(--cor-fundo, #f4f4f5);
+    border-radius: 8px;
+    margin-bottom: 32px;
+}
+.widget-title { font-size: 1.2rem; margin-top: 0; margin-bottom: 16px; }
+
+#table-of-contents ul, .related-posts { list-style: none; padding: 0; }
+#table-of-contents li a, .related-posts li a { 
+    display: block;
+    padding: 8px 0;
+    color: var(--cor-texto-suave, #71717a);
+    text-decoration: none;
+    border-bottom: 1px solid var(--cor-borda, #e4e4e7);
+}
+#table-of-contents li a:hover, .related-posts li a:hover { color: var(--cor-destaque, #6366f1); }
+
+.cta-widget { background-color: var(--cor-destaque, #6366f1); color: white; }
+.cta-widget .widget-title { color: white; }
+.cta-widget p { margin: 0 0 16px; }
+.cta-button {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 12px;
+    background-color: white;
+    color: var(--cor-destaque, #6366f1);
+    border-radius: 8px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+
+@media (min-width: 1024px) {
+    .article-container {
+        flex-direction: row; 
+        align-items: flex-start;
+        gap: 64px; 
+    }
+
+    .article-body {
+        flex: 1; 
+        max-width: none; 
+    }
+
+    .article-sidebar {
+        width: 300px; 
+        flex-shrink: 0; 
+        position: sticky; 
+        top: 100px; 
+    }
+
+    .article-title {
+        font-size: 2.8rem; 
+    }
+}
+
+/* ======================================================= */
+
+@media(max-width: 768px){
+    .article-content{
+        margin-top: 120px;
+    }
+}
+.featured-image {
+    display: block; 
+    width: 100%;  
+    margin-top: 32px;   
+    margin-bottom: 32px; 
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.featured-image img {
+    width: 100%;
+    height: auto; 
+}
+
+
+.article-content {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+.article-content p,
+.article-content h1,
+.article-content h2,
+.article-content h3,
+.article-content li,
+.language-js {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    -webkit-hyphens: auto; 
+    -ms-hyphens: auto;     
+    hyphens: auto;         
+}
